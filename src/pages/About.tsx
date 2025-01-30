@@ -1,10 +1,17 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Sparkles, Heart } from "lucide-react";
+import { Brain, Sparkles, Heart, ArrowLeft } from "lucide-react";
+import Link from "next/link"; // Import Link component
 
 const About = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary to-secondary p-8">
       <div className="max-w-4xl mx-auto">
+        {/* Back to Home Button */}
+        <Link href="/" className="flex items-center text-primary mb-4">
+          <ArrowLeft className="w-6 h-6 mr-2" /> {/* Back icon */}
+          <span className="text-lg">Back to Home</span>
+        </Link>
+
         <Card className="bg-white/95">
           <CardHeader>
             <CardTitle className="text-4xl text-center text-primary mb-6">
