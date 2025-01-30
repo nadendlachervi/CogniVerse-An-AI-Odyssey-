@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
-import { Brain, BookOpen, Compass } from "lucide-react";
+import { Brain, BookOpen, Compass, User } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
@@ -34,34 +34,56 @@ const Index = () => {
           </div>
         </div>
 
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-white/95">
+        {/* Navigation Cards */}
+        <div className="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+          <Card 
+            className="p-6 hover:shadow-lg transition-shadow bg-white/95 cursor-pointer"
+            onClick={() => navigate("/dashboard")}
+          >
             <div className="text-center">
               <Brain className="w-12 h-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">Dashboard</h3>
               <p className="text-gray-600">
-                Access all your AI companions and track your progress
+                Access all your AI companions
               </p>
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-white/95">
+          <Card 
+            className="p-6 hover:shadow-lg transition-shadow bg-white/95 cursor-pointer"
+            onClick={() => navigate("/about")}
+          >
             <div className="text-center">
               <BookOpen className="w-12 h-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">About</h3>
               <p className="text-gray-600">
-                Learn about our mission and AI companions
+                Learn about CogniVerse
               </p>
             </div>
           </Card>
 
-          <Card className="p-6 hover:shadow-lg transition-shadow bg-white/95">
+          <Card 
+            className="p-6 hover:shadow-lg transition-shadow bg-white/95 cursor-pointer"
+            onClick={() => navigate("/explore")}
+          >
             <div className="text-center">
               <Compass className="w-12 h-12 mx-auto mb-4 text-primary" />
               <h3 className="text-xl font-semibold mb-2">Explore</h3>
               <p className="text-gray-600">
-                Discover new learning paths and companions
+                Discover companions
+              </p>
+            </div>
+          </Card>
+
+          <Card 
+            className="p-6 hover:shadow-lg transition-shadow bg-white/95 cursor-pointer"
+            onClick={() => navigate("/profile")}
+          >
+            <div className="text-center">
+              <User className="w-12 h-12 mx-auto mb-4 text-primary" />
+              <h3 className="text-xl font-semibold mb-2">Profile</h3>
+              <p className="text-gray-600">
+                View achievements
               </p>
             </div>
           </Card>
